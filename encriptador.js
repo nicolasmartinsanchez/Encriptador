@@ -13,10 +13,11 @@ var textoEncriptado;    //en esta variable se almacena el texto encriptado
 var vocales = ["a", "e", "i", "o", "u"];
 var reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
 
-var division = document.getElementById("division");
+var cajaResultado = document.getElementById("cajaTextoResultado");
 var muñeco = document.getElementById("muñeco");
 var botones = document.getElementById("botones");
 var backupMuñeco;
+var backupTexto;
 var button;
 
 function capturarTextoNormal()  //funcion que captura el texto normal que el usuario coloca en la caja, cuando oprime el boton "encriptar"
@@ -114,7 +115,8 @@ function limpiarCajaTexto2()
 {
     if(textoResultado.value != "")
     {
-        backupMuñeco = division.removeChild(muñeco);
+        backupMuñeco = cajaResultado.removeChild(muñeco);
+        backupTexto = cajaResultado.removeChild(textoNoEncontrado);
     }
 }
 
@@ -127,7 +129,8 @@ function copiarTexto()
 {
     textoResultado.select();
     document.execCommand("copy");
-    division.appendChild(backupMuñeco);
+    cajaResultado.appendChild(backupMuñeco);
+    cajaResultado.appendChild(backupTexto);
     limpiarTextoResultado();
     quitarBotonCopiar();
     alert("Copiado");
