@@ -15,10 +15,10 @@ var reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
 
 var cajaResultado = document.getElementById("cajaTextoResultado");
 var muñeco = document.getElementById("muñeco");
-var botones = document.getElementById("botones");
+var botones = document.getElementById("cajaTextoResultado");
 var backupMuñeco;
 var backupTexto;
-var button;
+var botonCopiar;
 
 function capturarTextoNormal()  //funcion que captura el texto normal que el usuario coloca en la caja, cuando oprime el boton "encriptar"
 {
@@ -90,15 +90,14 @@ function desencriptar()
 
 function crearBotonCopiar()
 {
-    button = document.createElement("input");
-    button.type = "button";
-    button.id = "submit";
-    button.value = "Copiar";
-    button.className = "boton";
+    botonCopiar = document.createElement("input");
+    botonCopiar.type = "button";
+    botonCopiar.id = "botonCopiar";
+    botonCopiar.value = "Copiar";
 
-    botones.appendChild(button);
+    botones.appendChild(botonCopiar);
 
-    button.addEventListener("click", copiarTexto);
+    botonCopiar.addEventListener("click", copiarTexto);
 }
 
 function limpiarTextoIngresado()
@@ -122,7 +121,7 @@ function limpiarCajaTexto2()
 
 function quitarBotonCopiar()
 {
-    var backupBotonCopiar = botones.removeChild(button);
+    var backupBotonCopiar = botones.removeChild(botonCopiar);
 }
 
 function copiarTexto()
