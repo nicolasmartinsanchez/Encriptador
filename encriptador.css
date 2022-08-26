@@ -1,11 +1,12 @@
 body{
     background-color: #F3F5FC;
+    font-family: Helvetica;
 }
 
 .logo{
     position: absolute;
-    top: 4%;
-    left: 4%;
+    top: 3%;
+    left: 3%;
 }
 
 .cajasTexto{
@@ -32,8 +33,7 @@ body{
     border: none;
     outline: none;
     background-color: #F3F5FC;
-    font-size: 32px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -57,7 +57,7 @@ body{
 .boton{
     width: 47%;
     height: 10%;
-    padding: 24px;
+    padding: 3%;
     border-radius: 24px;
     border: 1px solid #0a3871;
     font-size: 18px;
@@ -85,7 +85,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    border-radius: 32px;
+    border-radius: 28px;
     border: none;
     padding: 0px;
     font-size: 24px;
@@ -103,7 +103,6 @@ body{
 }
 
 #textoNoEncontrado{
-    box-sizing: border-box;
     position: absolute;
     width: 90%;
     top: 80%;
@@ -116,16 +115,23 @@ body{
     border: none;
 }
 
+#textoIndicativo{
+    position: absolute;
+    width: 90%;
+    top: 80%;
+    left: 5%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0a3871;
+}
+
 #botonCopiar{   
     position: absolute;
-    right: 5%;
-    bottom: 5%;
-    width: 60px;
-    height: 60px;
+    right: 25px;
+    bottom: 25px;
     color: #0A3871;
     background-color: white;
-    border-color: #0A3871;
-    border-radius: 50%;
 }
 
 @media screen and (max-width: 480px)

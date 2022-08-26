@@ -10,9 +10,12 @@
         <title>Encriptador de texto</title>
     </head>
     <body>
+        <div class="imagenes" id="division">
+            <img class="logo" src="Vector.png" alt="logoAlura">
+        </div>
         <div class="cajasTexto">
             <div class="cajaTextoIngreso">
-                <textarea id="cajaTexto1" placeholder="Enter a message..."></textarea>
+                <textarea id="cajaTexto1" placeholder="Ingrese un mensaje..."></textarea>
                 <div class="botones" id="botones">
                     <input class="boton" type="button" id="botonEncriptar" value="Encriptar">
                     <input class="boton" type="button" id="botonDesencriptar" value="Desencriptar">
@@ -21,14 +24,8 @@
             <div class="cajaTextoResultado" id="cajaTextoResultado">
                 <textarea id="cajaTexto2" disabled></textarea>
                 <img id="muñeco" class="muneco" src="Muñeco.png" alt="muñeco">
-                <input id="textoNoEncontrado" type="text" value="Ningún mensaje no encontrado">
+                <p id="textoIndicativo">Ningún mensaje encontrado...</p>
             </div>
-        </div>
-        <div class="cajasTexto2">
-            
-        </div>
-        <div class="imagenes" id="division">
-            <img class="logo" src="Vector.png" alt="logoAlura">
         </div>
         <script src="encriptador.js"></script>
     </body>

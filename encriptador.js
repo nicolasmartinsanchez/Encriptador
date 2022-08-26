@@ -90,10 +90,10 @@ function desencriptar()
 
 function crearBotonCopiar()
 {
-    botonCopiar = document.createElement("input");
-    botonCopiar.type = "button";
+    botonCopiar = document.createElement("img");
     botonCopiar.id = "botonCopiar";
-    botonCopiar.value = "Copiar";
+    botonCopiar.src = "copy.png";
+    botonCopiar.alt = "Copiar"
 
     botones.appendChild(botonCopiar);
 
@@ -115,7 +115,7 @@ function limpiarCajaTexto2()
     if(textoResultado.value != "")
     {
         backupMuñeco = cajaResultado.removeChild(muñeco);
-        backupTexto = cajaResultado.removeChild(textoNoEncontrado);
+        backupTexto = cajaResultado.removeChild(textoIndicativo);
     }
 }
 
