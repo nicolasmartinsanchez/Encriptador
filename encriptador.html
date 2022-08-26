@@ -11,8 +11,16 @@
     </head>
     <body>
         <div class="cajasTexto">
-            <textarea id="cajaTexto1" placeholder="Enter a message..."></textarea>
-            <textarea id="cajaTexto2"></textarea>
+            <div class="cajaTextoIngreso">
+                <textarea id="cajaTexto1" placeholder="Enter a message..."></textarea>
+                <div class="botones" id="botones">
+                    <input class="boton" type="button" id="botonEncriptar" value="Encriptar">
+                    <input class="boton" type="button" id="botonDesencriptar" value="Desencriptar">
+                </div>
+            </div>
+            <div class="cajaTextoResultado">
+                <textarea id="cajaTexto2"></textarea>
+            </div>
         </div>
         <div class="cajasTexto2">
             <input class="texto" type="text" value="Ningún mensaje no encontrado">
@@ -21,10 +29,7 @@
             <img class="logo" src="Vector.png" alt="logoAlura">
             <img id="muñeco" class="muneco" src="Muñeco.png" alt="muñeco">
         </div>
-        <div class="botones" id="botones">
-            <input class="boton" type="button" id="botonEncriptar" value="Encriptar">
-            <input class="boton" type="button" id="botonDesencriptar" value="Desencriptar">
-        </div>
+
         <script src="encriptador.js"></script>
     </body>
 </html>
