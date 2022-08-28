@@ -20,7 +20,7 @@ body{
 }
 
 .cajaTextoIngreso{
-    width: 45%;
+    width: 50%;
     height: 100%;
     position: relative;
     left: 0px;
@@ -28,7 +28,7 @@ body{
 }
 
 #cajaTexto1{
-    width: 100%;
+    width: 95%;
     height: 85%;
     border: none;
     outline: none;
@@ -51,7 +51,7 @@ body{
     bottom: 0%;
     left: 2%;
     margin: 0 auto;
-    width: 100%;
+    width: 95%;
 }
 
 .boton{
@@ -72,6 +72,22 @@ body{
 #botonDesencriptar{
     background-color: #D8DFE8;
     color: #0a3871;
+}
+
+.boton-borrar{
+    position: absolute;
+    top: 2%;
+    right: -2%;
+}
+
+.boton-borrar input{
+    border-radius: 50%;
+    border: 0px solid #F3F5FC;
+    font-weight: 600;
+    font-size: 25px;
+    color: #0a3871;
+    cursor: pointer;
+    opacity: 0;
 }
 
 .cajaTextoResultado{

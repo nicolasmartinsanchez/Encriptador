@@ -5,6 +5,7 @@ var botonDesencriptar = document.getElementById("botonDesencriptar");   //variab
 
 botonEncriptar.addEventListener("click", encriptar);    //registra el evento sobre el boton "Encriptar" que activa la funcion "encriptar" 
 botonDesencriptar.addEventListener("click", desencriptar);      //registra el evento sobre el boton "Desencriptar" que activa la funcion "desencriptar" 
+textoIngreso.addEventListener("keyup", mostrarBotonBorrar);
 
 //textoIngreso.addEventListener("paste", pegarTexto);
 
@@ -19,11 +20,14 @@ var botones = document.getElementById("botones2");
 var popupCopiar = document.getElementById("popup-copiar");
 var popupCompartir = document.getElementById("popup-compartir");
 var ventanaCompartir = document.getElementById("ventana-compartir");
+var botonBorrar = document.getElementById("botonBorrar");
 
 var backupMuñeco;
 var backupTexto;
 var botonCopiar;
 var botonCompartir;
+
+botonBorrar.addEventListener("click", borrarTextoIngreso);
 
 function capturarTextoNormal()  //funcion que captura el texto normal que el usuario coloca en la caja, cuando oprime el boton "encriptar"
 {
@@ -58,7 +62,7 @@ function encriptar()
     }
 
     textoResultado.value = textoEncriptado;     //se guarda en la caja de texto la variable "textoEncriptado" para mostrar el resultado final
-    limpiarTextoIngresado();
+    //limpiarTextoIngresado();
     limpiarCajaTexto2();
     if(textoResultado.value != "")
     {
@@ -92,7 +96,7 @@ function desencriptar()
         }
     }
     textoResultado.value = textoEncriptado;     //se guarda en la caja de texto la variable "textoEncriptado" para mostrar el resultado final
-    limpiarTextoIngresado();
+    //limpiarTextoIngresado();
     limpiarCajaTexto2();
     if(textoResultado.value != "")
     {
@@ -100,8 +104,6 @@ function desencriptar()
         crearBotonCompartir();
     }
 }
-
-
 
 function crearBotonCopiar()
 {
@@ -130,11 +132,10 @@ function crearBotonCompartir()
     botonCompartir.addEventListener("mouseover", mostrarPopupCompartir);
     botonCompartir.addEventListener("mouseleave", ocultarPopupCompartir);
 
+    
     botonCompartir.addEventListener("click", mostrarVentanaCompartir);
-    botonCompartir.addEventListener("click", ocultarVentanaCompartir);
+    //botonCompartir.addEventListener("click", ocultarVentanaCompartir);
 }
-
-
 
 function limpiarTextoIngresado()
 {
@@ -165,11 +166,6 @@ function copiarTexto()
 {
     textoResultado.select();
     document.execCommand("copy");
-    cajaResultado.appendChild(backupMuñeco);
-    cajaResultado.appendChild(backupTexto);
-    limpiarTextoResultado();
-    quitarBotones();
-    ocultarPopupCopiar();
 }
 
 function mostarPopupCopiar()
@@ -184,7 +180,10 @@ function ocultarPopupCopiar()
 
 function mostrarPopupCompartir()
 {
-    popupCompartir.classList.add("show");
+    if(ventanaCompartir.style.opacity == 0)
+    {
+        popupCompartir.classList.add("show");
+    }
 }
 
 function ocultarPopupCompartir()
@@ -194,14 +193,34 @@ function ocultarPopupCompartir()
 
 function mostrarVentanaCompartir()
 {
-    ventanaCompartir.classList.add("show2");
-   
+    if(ventanaCompartir.style.opacity == 0)
+    {
+        ventanaCompartir.style.opacity = 1;
+    }
+    else
+    {
+        ventanaCompartir.style.opacity = 0;
+    }
 }
 
-function ocultarVentanaCompartir()
+function mostrarBotonBorrar()
 {
-    ventanaCompartir.classList.remove("show2");
+    if(textoIngreso.value != "")
+    {
+        botonBorrar.style.opacity = 0.6;
+    }
+    else
+    {
+        botonBorrar.style.opacity = 0;
+    }
 }
 
-
-
+function borrarTextoIngreso()
+{
+    textoIngreso.value = "";
+    mostrarBotonBorrar();
+    limpiarTextoResultado();
+    cajaResultado.appendChild(backupMuñeco);
+    cajaResultado.appendChild(backupTexto);
+    quitarBotones();
+}
