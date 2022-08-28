@@ -1,4 +1,3 @@
-
 body{
     background-color: #F3F5FC;
     font-family: Helvetica;
@@ -11,7 +10,6 @@ body{
 }
 
 .cajasTexto{
-    margin: 0 auto;
     width: 80%;
     height: 70%;
     position: absolute;
@@ -33,24 +31,22 @@ body{
     border: none;
     outline: none;
     background-color: #F3F5FC;
-    font-size: 26px;
-    font-style: normal;
+    font-size: 24px;
     font-weight: 400;
     line-height: 150%;
     color: #0a3871;
     resize: none;
-    padding: 10px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
 }
 
 .botones{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: space-evenly;
     position: absolute;
     gap: 2%;
     bottom: 0%;
-    left: 2%;
-    margin: 0 auto;
+    left: 0%;
     width: 95%;
 }
 
@@ -58,9 +54,9 @@ body{
     width: 47%;
     height: 8%;
     padding: 3%;
-    border-radius: 24px;
+    border-radius: 17px;
     border: 1px solid #0a3871;
-    font-size: 17px;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -76,7 +72,7 @@ body{
 
 .boton-borrar{
     position: absolute;
-    top: 2%;
+    top: 3%;
     right: -2%;
 }
 
@@ -102,13 +98,12 @@ body{
 
 #cajaTexto2{
     width: 90%;
-    height: 84%;
+    height: 85%;
     background-color: #ffffff;
     border-radius: 28px;
     border: none;
     outline: none;
-    padding: 0px;
-    font-size: 26px;
+    font-size: 24px;
     color: #495057;
     font-weight: 400;
     line-height: 150%;
@@ -127,10 +122,10 @@ body{
     position: absolute;
     width: 90%;
     top: 85%;
-    left: 7.5%;
+    left: 5%;
     text-align: center;
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     color: #0a3871;
 }
 
@@ -141,23 +136,14 @@ body{
     float: right;
     cursor: pointer;
 }
-/*
-#botonCopiar{   
-    cursor: pointer;
-}
 
-#botonCompartir{
-    cursor: pointer;
-}
-*/
-.otros{
+.ventanas-emergentes{
     position: absolute;
     top: 81%;
     right: 10%;
 }
 
 .popup-copiar{
-    display: inline-flex;
     position: absolute;
     top: 0px;
     right: 50px;
@@ -165,6 +151,7 @@ body{
     border: 3px solid #0a3871;
     border-radius: 7px;
     opacity: 0;
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 6px 8px 1px rgb(0 0 0 / 14%), 0 3px 10px 2px rgb(0 0 0 / 12%)
 }
 
 .popup-copiar p{
@@ -175,7 +162,6 @@ body{
 }
 
 .popup-compartir{
-    display: inline-flex;
     position: absolute;
     top: 0px;
     right: -20px;
@@ -183,6 +169,7 @@ body{
     border: 3px solid #0a3871;
     border-radius: 7px;
     opacity: 0;
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 6px 8px 1px rgb(0 0 0 / 14%), 0 3px 10px 2px rgb(0 0 0 / 12%)
 }
 
 .popup-compartir p{
@@ -207,11 +194,6 @@ body{
     border-radius: 15px;
     box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
     opacity: 0;
-}
-
-.show2{
-    pointer-events: auto;
-    opacity: 1;
 }
 
 .ventana-compartir h1{
@@ -249,7 +231,7 @@ body{
     }
 
     .cajaTextoIngreso{
-        width: 94%;
+        width: 97%;
         height: 55%;
     }
 
@@ -262,18 +244,25 @@ body{
     }
 
     .botones{
-        left: 3%;
+        left: 4%;
     }
 
     .boton{
         width: 50%;
-        font-size: 11px;
+        font-size: 10.5px;
+    }
+
+    .boton-borrar{
+        top: 1%;
+    }
+
+    .boton-borrar input{
+        font-size: 15px;
     }
 
     .cajaTextoResultado{
         width: 100%;
         height: 40%;
-        position: absolute;
         top: 58%;
         left: 0px;
     }
@@ -291,17 +280,36 @@ body{
 
     #textoIndicativo{
         width: 85%;
-        font-size: 15px;
+        font-size: 14px;
         top: 85%;
-        right: 5%;
+        left: 7.5%;
+    }
+
+    .botones2{
+        position: relative;
+        top: -9%;
+        right: -7%;
+        float: right;
     }
 
     #botonCopiar{   
-        width: 10%;
+        width: 35%;
         right: 3%;
         bottom: 0%;
     }
 
+    #botonCompartir{   
+        width: 35%;
+        right: 10%;
+        bottom: 0%;
+    }
+}
+
+@media screen and (max-height: 700px)
+{
+    .botones2{
+        top: -13%;
+    }
 }
 
 
