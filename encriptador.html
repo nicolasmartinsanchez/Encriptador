@@ -17,16 +17,39 @@
             <div class="cajaTextoIngreso">
                 <textarea id="cajaTexto1" placeholder="Ingrese un mensaje..."></textarea>
                 <div class="botones" id="botones">
-                    <input class="boton" type="button" id="botonEncriptar" value="Encriptar">
-                    <input class="boton" type="button" id="botonDesencriptar" value="Desencriptar">
+                    <input class="boton" type="button" id="botonEncriptar" value="ENCRIPTAR">
+                    <input class="boton" type="button" id="botonDesencriptar" value="DESENCRIPTAR">
                 </div>
             </div>
             <div class="cajaTextoResultado" id="cajaTextoResultado">
                 <textarea id="cajaTexto2" aria-hidden="true"></textarea>
                 <img id="muñeco" class="muneco" src="Muñeco.png" alt="muñeco">
                 <p id="textoIndicativo">Ningún mensaje encontrado...</p>
+                <div class="botones2" id="botones2"></div>
             </div>
         </div>
+        <div class="otros">
+            <div class="popup-copiar"" id="popup-copiar">
+                <p>Copiar texto</p>
+            </div>
+            <div class="popup-compartir" id="popup-compartir">
+                <p>Compartir texto</p>
+            </div>
+            <div class="ventana-compartir" id="ventana-compartir">
+                <h1>Compartir este texto</h1>
+                <div class="aplicaciones">
+                    <div class="email">
+                        <img src="email.png" alt="logo email">
+                        <p>Correo electrónico</p>
+                    </div>
+                    <div class="whatsapp">
+                        <img src="whatsapp.png" alt="logo whatsapp">                       
+                        <p>Whatsapp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="encriptador.js"></script>
     </body>
 </html>

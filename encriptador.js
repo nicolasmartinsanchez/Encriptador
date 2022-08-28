@@ -15,10 +15,15 @@ var reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
 
 var cajaResultado = document.getElementById("cajaTextoResultado");
 var muñeco = document.getElementById("muñeco");
-var botones = document.getElementById("cajaTextoResultado");
+var botones = document.getElementById("botones2");
+var popupCopiar = document.getElementById("popup-copiar");
+var popupCompartir = document.getElementById("popup-compartir");
+var ventanaCompartir = document.getElementById("ventana-compartir");
+
 var backupMuñeco;
 var backupTexto;
 var botonCopiar;
+var botonCompartir;
 
 function capturarTextoNormal()  //funcion que captura el texto normal que el usuario coloca en la caja, cuando oprime el boton "encriptar"
 {
@@ -55,7 +60,11 @@ function encriptar()
     textoResultado.value = textoEncriptado;     //se guarda en la caja de texto la variable "textoEncriptado" para mostrar el resultado final
     limpiarTextoIngresado();
     limpiarCajaTexto2();
-    crearBotonCopiar();
+    if(textoResultado.value != "")
+    {
+        crearBotonCopiar();
+        crearBotonCompartir();
+    }
 }
 
 function desencriptar()
@@ -85,8 +94,14 @@ function desencriptar()
     textoResultado.value = textoEncriptado;     //se guarda en la caja de texto la variable "textoEncriptado" para mostrar el resultado final
     limpiarTextoIngresado();
     limpiarCajaTexto2();
-    crearBotonCopiar();
+    if(textoResultado.value != "")
+    {
+        crearBotonCopiar();
+        crearBotonCompartir();
+    }
 }
+
+
 
 function crearBotonCopiar()
 {
@@ -98,7 +113,28 @@ function crearBotonCopiar()
     botones.appendChild(botonCopiar);
 
     botonCopiar.addEventListener("click", copiarTexto);
+    botonCopiar.addEventListener("mouseover", mostarPopupCopiar);
+    botonCopiar.addEventListener("mouseleave", ocultarPopupCopiar);
 }
+
+function crearBotonCompartir()
+{
+    botonCompartir = document.createElement("img");
+    botonCompartir.id = "botonCompartir";
+    botonCompartir.src = "share.png";
+    botonCompartir.alt = "Compartir"
+
+    botones.appendChild(botonCompartir);
+
+    //botonCompartir.addEventListener("click", mostrarCompartir);
+    botonCompartir.addEventListener("mouseover", mostrarPopupCompartir);
+    botonCompartir.addEventListener("mouseleave", ocultarPopupCompartir);
+
+    botonCompartir.addEventListener("click", mostrarVentanaCompartir);
+    botonCompartir.addEventListener("click", ocultarVentanaCompartir);
+}
+
+
 
 function limpiarTextoIngresado()
 {
@@ -119,9 +155,10 @@ function limpiarCajaTexto2()
     }
 }
 
-function quitarBotonCopiar()
+function quitarBotones()
 {
     var backupBotonCopiar = botones.removeChild(botonCopiar);
+    var backupBotonCompartir = botones.removeChild(botonCompartir);
 }
 
 function copiarTexto()
@@ -131,10 +168,40 @@ function copiarTexto()
     cajaResultado.appendChild(backupMuñeco);
     cajaResultado.appendChild(backupTexto);
     limpiarTextoResultado();
-    quitarBotonCopiar();
-    alert("Copiado");
+    quitarBotones();
+    ocultarPopupCopiar();
 }
 
+function mostarPopupCopiar()
+{
+    popupCopiar.classList.add("show");
+}
+
+function ocultarPopupCopiar()
+{
+    popupCopiar.classList.remove("show");
+}
+
+function mostrarPopupCompartir()
+{
+    popupCompartir.classList.add("show");
+}
+
+function ocultarPopupCompartir()
+{
+    popupCompartir.classList.remove("show");
+}
+
+function mostrarVentanaCompartir()
+{
+    ventanaCompartir.classList.add("show2");
+   
+}
+
+function ocultarVentanaCompartir()
+{
+    ventanaCompartir.classList.remove("show2");
+}
 
 
 

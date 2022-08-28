@@ -1,3 +1,4 @@
+
 body{
     background-color: #F3F5FC;
     font-family: Helvetica;
@@ -28,7 +29,7 @@ body{
 
 #cajaTexto1{
     width: 100%;
-    height: 100%;
+    height: 85%;
     border: none;
     outline: none;
     background-color: #F3F5FC;
@@ -55,11 +56,11 @@ body{
 
 .boton{
     width: 47%;
-    height: 10%;
+    height: 8%;
     padding: 3%;
     border-radius: 24px;
     border: 1px solid #0a3871;
-    font-size: 19px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -79,11 +80,13 @@ body{
     position: absolute;
     top: 0%;
     right: 0px;
+    background-color: #ffffff;
+    border-radius: 28px
 }
 
 #cajaTexto2{
     width: 90%;
-    height: 98%;
+    height: 84%;
     background-color: #ffffff;
     border-radius: 28px;
     border: none;
@@ -115,13 +118,102 @@ body{
     color: #0a3871;
 }
 
-#botonCopiar{   
-    position: absolute;
-    right: 3%;
-    bottom: 0%;
-    color: #0A3871;
-    background-color: white;
+.botones2{
+    position: relative;
+    top: 2.3%;
+    right: 2%;
+    float: right;
     cursor: pointer;
+}
+/*
+#botonCopiar{   
+    cursor: pointer;
+}
+
+#botonCompartir{
+    cursor: pointer;
+}
+*/
+.otros{
+    position: absolute;
+    top: 81%;
+    right: 10%;
+}
+
+.popup-copiar{
+    display: inline-flex;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    background-color: #0a3871;
+    border: 3px solid #0a3871;
+    border-radius: 7px;
+    opacity: 0;
+}
+
+.popup-copiar p{
+    text-align: right; 
+    padding: 3px 5px;
+    font-size: 14px;
+    color: white;
+}
+
+.popup-compartir{
+    display: inline-flex;
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    background-color: #0a3871;
+    border: 3px solid #0a3871;
+    border-radius: 7px;
+    opacity: 0;
+}
+
+.popup-compartir p{
+    text-align: right; 
+    padding: 3px 5px;
+    font-size: 14px;
+    color: white;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 0.9;
+}
+
+.ventana-compartir{
+    display: inline-block;
+    text-align: center;
+    width: 275px;
+    height: 95px;
+    background-color: white;
+    padding: 25px 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+    opacity: 0;
+}
+
+.show2{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.ventana-compartir h1{
+    font-weight: bold;
+}
+
+.ventana-compartir .aplicaciones{
+    display: inline-flex;
+    gap: 40px;
+    padding: 15px;
+}
+
+.ventana-compartir .email{
+    display: inline-block;
+}
+
+.ventana-compartir .whatsapp{
+    display: inline-block;
 }
 
 @media screen and (max-width: 800px)
@@ -135,9 +227,11 @@ body{
 
     .cajasTexto{
         width: 85%;
-        height: 80%;
+        height: 85%;
         left: 7.5%;
+        margin: 0 auto;
     }
+
     .cajaTextoIngreso{
         width: 94%;
         height: 55%;
@@ -148,6 +242,7 @@ body{
         padding-left: 3%;
         padding-right: 3%;
         padding-top: 0px;
+        height: 85%;
     }
 
     .botones{
@@ -156,14 +251,14 @@ body{
 
     .boton{
         width: 50%;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .cajaTextoResultado{
         width: 100%;
         height: 40%;
         position: absolute;
-        top: 60%;
+        top: 58%;
         left: 0px;
     }
 
