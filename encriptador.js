@@ -3,17 +3,13 @@ var textoResultado = document.getElementById("cajaTexto2");     //variable que g
 var botonEncriptar = document.getElementById("botonEncriptar");     //variable que guarda el boton para encriptar
 var botonDesencriptar = document.getElementById("botonDesencriptar");   //variable que guarda el boton para desencriptar  
 
-botonEncriptar.addEventListener("click", encriptar);    //registra el evento sobre el boton "Encriptar" que activa la funcion "encriptar" 
-botonDesencriptar.addEventListener("click", desencriptar);      //registra el evento sobre el boton "Desencriptar" que activa la funcion "desencriptar" 
-textoIngreso.addEventListener("keyup", mostrarBotonBorrar);
-
-//textoIngreso.addEventListener("paste", pegarTexto);
-
 var textoNormal;    //esta variable se almacena el texto sin encriptar
 var textoEncriptado;    //en esta variable se almacena el texto encriptado
-var vocales = ["a", "e", "i", "o", "u"];
-var reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
 
+const vocales = ["a", "e", "i", "o", "u"];
+const reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
+
+//variables utilizadas para crear y editar elementos del HTML
 var cajaResultado = document.getElementById("cajaTextoResultado");
 var muñeco = document.getElementById("muñeco");
 var botones = document.getElementById("botones2");
@@ -21,12 +17,14 @@ var popupCopiar = document.getElementById("popup-copiar");
 var popupCompartir = document.getElementById("popup-compartir");
 var ventanaCompartir = document.getElementById("ventana-compartir");
 var botonBorrar = document.getElementById("botonBorrar");
-
 var backupMuñeco;
 var backupTexto;
 var botonCopiar;
 var botonCompartir;
 
+botonEncriptar.addEventListener("click", encriptar);    //registra el evento sobre el boton "Encriptar" que activa la funcion "encriptar" 
+botonDesencriptar.addEventListener("click", desencriptar);      //registra el evento sobre el boton "Desencriptar" que activa la funcion "desencriptar" 
+textoIngreso.addEventListener("keyup", mostrarBotonBorrar);
 botonBorrar.addEventListener("click", borrarTextoIngreso);
 
 function capturarTextoNormal()  //funcion que captura el texto normal que el usuario coloca en la caja, cuando oprime el boton "encriptar"
@@ -58,7 +56,7 @@ function encriptar()
         {
             textoEncriptado = textoEncriptado + textoNormal[i];     //si entra a este condicional quiere decir que es una consonante y debe añadirse en la variable "textoEncriptado" sin ningun cambio
         }
-        encontrado = false;     //se vuelve a colocar false para que en las siguientes iteraciones no de por echo que es una vocal
+        encontrado = false;     //se vuelve a colocar false para que en las siguientes iteraciones no de por hecho que es una vocal
     }
 
     textoResultado.value = textoEncriptado;     //se guarda en la caja de texto la variable "textoEncriptado" para mostrar el resultado final
@@ -128,13 +126,10 @@ function crearBotonCompartir()
 
     botones.appendChild(botonCompartir);
 
-    //botonCompartir.addEventListener("click", mostrarCompartir);
     botonCompartir.addEventListener("mouseover", mostrarPopupCompartir);
     botonCompartir.addEventListener("mouseleave", ocultarPopupCompartir);
 
-    
     botonCompartir.addEventListener("click", mostrarVentanaCompartir);
-    //botonCompartir.addEventListener("click", ocultarVentanaCompartir);
 }
 
 function limpiarTextoIngresado()
@@ -217,7 +212,7 @@ function mostrarBotonBorrar()
 
 function borrarTextoIngreso()
 {
-    textoIngreso.value = "";
+    limpiarTextoIngresado();
     mostrarBotonBorrar();
     limpiarTextoResultado();
     cajaResultado.appendChild(backupMuñeco);

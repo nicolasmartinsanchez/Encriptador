@@ -131,7 +131,8 @@ body{
 
 .botones2{
     position: relative;
-    top: 2.3%;
+    display: flex;
+    top: 1%;
     right: 2%;
     float: right;
     cursor: pointer;
@@ -286,9 +287,8 @@ body{
     }
 
     .botones2{
-        position: relative;
         top: -9%;
-        right: -7%;
+        right: -20px;
         float: right;
     }
 
