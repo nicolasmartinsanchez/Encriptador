@@ -9,6 +9,7 @@ body{
     left: 2.5%;
 }
 
+/*Zona izquierda o superior (dependiendo el ancho de la pantalla)*/
 .cajasTexto{
     width: 80%;
     height: 70%;
@@ -86,6 +87,7 @@ body{
     opacity: 0;
 }
 
+/*Zona derecha o inferior (dependiendo el ancho de la pantalla)*/
 .cajaTextoResultado{
     width: 45%;
     height: 100%;
