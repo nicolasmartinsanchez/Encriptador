@@ -1,6 +1,8 @@
 body{
     background-color: #F3F5FC;
     font-family: Helvetica;
+    height: 100%;
+    width: 100%;
 }
 
 .logo{
@@ -132,12 +134,28 @@ body{
 }
 
 .botones2{
-    position: relative;
+    position: absolute;
     display: flex;
-    top: 1%;
-    right: 2%;
-    float: right;
+    justify-content: flex-end;
+    top: 91%;
+    right: 7%;
+    opacity: 0;
+    background: none;
+}
+
+.botonAdicional{
+    border: 0px solid white;
+    background: none;
     cursor: pointer;
+}
+
+#botonCopiar{
+    width: 40px;
+}
+
+#botonCompartir{
+    padding-left: 20px;
+    width: 40px;
 }
 
 .ventanas-emergentes{
@@ -217,7 +235,15 @@ body{
     display: inline-block;
 }
 
-@media screen and (max-width: 800px)
+#botonWhatsapp{
+    cursor: pointer;
+}
+
+#botonEmail{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px)
 {
     .logo{
         position: absolute;
@@ -231,6 +257,7 @@ body{
         height: 85%;
         left: 7.5%;
         margin: 0 auto;
+        top: 8%;
     }
 
     .cajaTextoIngreso{
@@ -265,13 +292,14 @@ body{
 
     .cajaTextoResultado{
         width: 100%;
-        height: 40%;
+        height: 45%;
         top: 58%;
         left: 0px;
     }
 
     #cajaTexto2{
         font-size: 15px;
+        height: 77%;
     }
 
     .muneco{
@@ -289,31 +317,82 @@ body{
     }
 
     .botones2{
-        top: -9%;
-        right: -20px;
-        float: right;
-    }
-
-    #botonCopiar{   
-        width: 35%;
+        width: 30%;
+        top: 85%;
         right: 3%;
-        bottom: 0%;
     }
 
-    #botonCompartir{   
-        width: 35%;
-        right: 10%;
-        bottom: 0%;
+    .botones2 .botonAdicional{
+        width: 100%;
     }
+
+    #botonCopiar{
+        width: 45%;
+    }
+    
+    #botonCompartir{
+        padding-left: 0px;
+        width: 45%;
+    }
+
+    #imgCopiar{
+        width: 95%;
+    }
+
+    #imgCompartir{
+        width: 100%;
+    }
+
+    .ventanas-emergentes{
+        top: 74%;
+        right: 7.5%;
+    }
+
+    .ventana-compartir{
+        width: 230px;
+        height: 80px;
+        padding: 15px 10px;
+    }
+
+    .ventana-compartir h1{
+        font-size: 13px;
+    }
+
+    .ventana-compartir .aplicaciones{
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .ventana-compartir p{
+        font-size: 12px;
+    }
+
 }
 
 @media screen and (max-height: 700px)
 {
+    #cajaTexto2{
+        font-size: 15px;
+        height: 75%;
+    }
+
     .botones2{
-        top: -13%;
+        top: 82%;
+        right: 2%;
+    }
+
+    .botones2 .botonAdicional{
+        width: 100%;
+    }
+
+    #botonCopiar{
+        width: 45%;
+    }
+
+    #botonCompartir{
+        width: 45%;
     }
 }
-
 
 
 

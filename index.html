@@ -25,10 +25,13 @@
                 </div>
             </div>
             <div class="cajaTextoResultado" id="cajaTextoResultado">
-                <textarea id="cajaTexto2" aria-hidden="true"></textarea>
+                <textarea id="cajaTexto2" readonly></textarea>
                 <img id="muñeco" class="muneco" src="Muñeco.png" alt="muñeco">
                 <p id="textoIndicativo">Ningún mensaje encontrado...</p>
-                <div class="botones2" id="botones2"></div>
+                <div class="botones2" id="botones2">
+                    <button id="botonCopiar" type="button" class="botonAdicional"><img src="copy.png" alt="Compartir" id="imgCompartir"></button>
+                    <button id="botonCompartir" type="button" class="botonAdicional"><img src="share.png" alt="Compartir" id="imgCompartir"></button>
+                </div>
             </div>
         </div>
         <div class="ventanas-emergentes">
@@ -42,11 +45,11 @@
                 <h1>Compartir este texto</h1>
                 <div class="aplicaciones">
                     <div class="email">
-                        <img src="email.png" alt="logo email">
+                        <img src="email.png" alt="logo email" id="botonEmail">
                         <p>Correo electrónico</p>
                     </div>
                     <div class="whatsapp">
-                        <img src="whatsapp.png" alt="logo whatsapp">                       
+                        <img src="whatsapp.png" alt="logo whatsapp" id="botonWhatsapp">                       
                         <p>Whatsapp</p>
                     </div>
                 </div>

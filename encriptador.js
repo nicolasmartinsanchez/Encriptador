@@ -13,21 +13,37 @@ const reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
 var cajaResultado = document.getElementById("cajaTextoResultado");
 var muñeco = document.getElementById("muñeco");
 var botones = document.getElementById("botones2");
+var cajaBotonCopiar = document.getElementById("botonCopiar");
+var cajaBotonCompartir = document.getElementById("botonCompartir");
 var popupCopiar = document.getElementById("popup-copiar");
 var popupCompartir = document.getElementById("popup-compartir");
 var ventanaCompartir = document.getElementById("ventana-compartir");
 var botonBorrar = document.getElementById("botonBorrar");
+var botonWhatsapp = document.getElementById("botonWhatsapp");
+var botonEmail = document.getElementById("botonEmail");
 var backupMuñeco;
 var backupTexto;
-var botonCopiar;
-var botonCompartir;
+
 
 //Eventos
 botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar); 
+
 textoIngreso.addEventListener("keyup", mostrarBotonBorrar);
 botonBorrar.addEventListener("click", borrarTextoIngreso);
 
+cajaBotonCopiar.addEventListener("click", copiarTexto);
+cajaBotonCopiar.addEventListener("mouseover", mostarPopupCopiar);
+cajaBotonCopiar.addEventListener("mouseleave", ocultarPopupCopiar);
+
+cajaBotonCompartir.addEventListener("click", mostrarVentanaCompartir);
+cajaBotonCompartir.addEventListener("mouseover", mostrarPopupCompartir);
+cajaBotonCompartir.addEventListener("mouseleave", ocultarPopupCompartir);
+
+botonWhatsapp.addEventListener("click", llevarWhatsapp);
+botonEmail.addEventListener("click", llevarEmail);
+
+//Funciones
 function capturarTextoNormal()
 {
     textoNormal = textoIngreso.value;
@@ -64,8 +80,7 @@ function encriptar()
     limpiarCajaTexto2();
     if(textoResultado.value != "")
     {
-        crearBotonCopiar();
-        crearBotonCompartir();
+        mostrarBotonesAdicionales();
     }
 }
 
@@ -98,38 +113,13 @@ function desencriptar()
     limpiarCajaTexto2();
     if(textoResultado.value != "")
     {
-        crearBotonCopiar();
-        crearBotonCompartir();
+        
     }
 }
 
-function crearBotonCopiar()
+function mostrarBotonesAdicionales()
 {
-    botonCopiar = document.createElement("img");
-    botonCopiar.id = "botonCopiar";
-    botonCopiar.src = "copy.png";
-    botonCopiar.alt = "Copiar"
-
-    botones.appendChild(botonCopiar);
-
-    botonCopiar.addEventListener("click", copiarTexto);
-    botonCopiar.addEventListener("mouseover", mostarPopupCopiar);
-    botonCopiar.addEventListener("mouseleave", ocultarPopupCopiar);
-}
-
-function crearBotonCompartir()
-{
-    botonCompartir = document.createElement("img");
-    botonCompartir.id = "botonCompartir";
-    botonCompartir.src = "share.png";
-    botonCompartir.alt = "Compartir"
-
-    botones.appendChild(botonCompartir);
-
-    botonCompartir.addEventListener("mouseover", mostrarPopupCompartir);
-    botonCompartir.addEventListener("mouseleave", ocultarPopupCompartir);
-
-    botonCompartir.addEventListener("click", mostrarVentanaCompartir);
+    botones.style.opacity = 1;
 }
 
 function limpiarTextoIngresado()
@@ -148,24 +138,23 @@ function limpiarCajaTexto2()
     {
         backupMuñeco = cajaResultado.removeChild(muñeco);
         backupTexto = cajaResultado.removeChild(textoIndicativo);
+        botones.style.opacity = 1;
     }
-}
-
-function quitarBotones()
-{
-    var backupBotonCopiar = botones.removeChild(botonCopiar);
-    var backupBotonCompartir = botones.removeChild(botonCompartir);
 }
 
 function copiarTexto()
 {
     textoResultado.select();
     document.execCommand("copy");
+    ventanaCompartir.style.opacity = 0;
 }
 
 function mostarPopupCopiar()
 {
-    popupCopiar.classList.add("show");
+    if(textoResultado.value != 0 && window.innerWidth>700)
+    {
+        popupCopiar.classList.add("show");
+    }
 }
 
 function ocultarPopupCopiar()
@@ -175,7 +164,7 @@ function ocultarPopupCopiar()
 
 function mostrarPopupCompartir()
 {
-    if(ventanaCompartir.style.opacity == 0)
+    if(ventanaCompartir.style.opacity == 0 && textoResultado.value != 0 && window.innerWidth>700)
     {
         popupCompartir.classList.add("show");
     }
@@ -213,9 +202,22 @@ function mostrarBotonBorrar()
 function borrarTextoIngreso()
 {
     limpiarTextoIngresado();
-    mostrarBotonBorrar();
     limpiarTextoResultado();
+    mostrarBotonBorrar();
     cajaResultado.appendChild(backupMuñeco);
     cajaResultado.appendChild(backupTexto);
-    quitarBotones();
+    botones.style.opacity = 0;
+    ventanaCompartir.style.opacity = 0;
+}
+
+function llevarWhatsapp()
+{
+    copiarTexto();
+    window.location = "https://web.whatsapp.com/";
+}
+
+function llevarEmail()
+{
+    copiarTexto();
+    window.location = "https://www.google.com/intl/es/gmail/about/";
 }
