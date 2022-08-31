@@ -6,4 +6,5 @@ Este es un proyecto realizadó durante el primer mes del programa One Oracle Nex
 Consiste es una aplicación capaz de encriptar y desencriptar texto.
 
 Realizadó por ***Nicolás Martín Sánchez***
+
 Linkedin: *linkedin.com/in/nicolasmartinsanchez*
