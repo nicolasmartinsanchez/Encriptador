@@ -6,8 +6,8 @@ var botonDesencriptar = document.getElementById("botonDesencriptar");
 var textoNormal;
 var textoEncriptado;
 
-const vocales = ["a", "e", "i", "o", "u"];
-const reemplazoVocales = ["ai", "enter", "imes", "ober","ufat"];
+const vocales = ["a", "e", "c", "o", "m"];
+const reemplazoVocales = ["ai", "entr", "ihe", "jer","uft"];
 
 //variables utilizadas para crear y editar elementos del HTML
 var cajaResultado = document.getElementById("cajaTextoResultado");
